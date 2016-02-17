@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<WebPage>
+	<Config>
+		<Taskid>20130727</Taskid>
+		<Engine>baidu</Engine>
+		<Encoding>utf-8</Encoding>
+		<Path>/data1/webpage/download/srss</Path>
+	</Config>
+	<Download>
+		<Method>phantomjs</Method>
+		<UrlPattern><![CDATA[http://www.baidu.com/s?wd=_WORD_]]></UrlPattern>		
+		<Sleep>1</Sleep>
+	</Download>
+	<Parse>		
+        <Redirect scheme="http://www\.baidu\.com/(link|baidu\.php)\?url=.*?">true</Redirect>
+        <!-- exclude attribue -->
+		<NodeAttr>id,data-click,data-op,data-log,mu,cellspacing,cellpadding,height,width,style,bgcolor,border</NodeAttr>
+		<!-- container -->
+		<Container id="2000" level="children" method="selector">
+			<Start>#content_left</Start>
+		</Container>
+		<!-- item -->
+		<!-- combo box -->
+		<Item id="1001" desc="baidu combo box" rank="false" eval="false">
+			<Path text=".*?以上信息由百度根据您的搜索词自动产生.*?"></Path>
+			<Path class="">tbody@tr@td@font@div@ul</Path>
+			<SetStructure>combo box[tbody@tr@td@font@div@ul]</SetStructure>
+			<Container id="1001" level="children">
+				<Start class="">tbody@tr@td@font@div@ul</Start>		
+			</Container>
+		</Item>
+		<Item id="1002" desc="baidu combo box" rank="false" eval="false">
+			<Path text=".*?以上信息由百度根据您的搜索词自动产生.*?"></Path>
+			<Path class="^op_.*?">tbody@tr@td@font@div</Path>	
+			<SetStructure>combo box[tbody@tr@td@font@div]</SetStructure>
+			<Container id="1001" level="children">
+				<Start class="^op_.*?">tbody@tr@td@font@div</Start>		
+			</Container>
+		</Item>
+		<Item id="1003" desc="baidu combo box" rank="false" eval="false">
+			<Path text=".*?以上信息由百度根据您的搜索词自动产生.*?"></Path>
+			<Path class="op_zx_renwu$">div</Path>
+			<SetStructure>combo box[div][class=op_zx_renwu]</SetStructure>
+			<Container id="1001" level="children">
+				<Start class="op_zx_renwu$">div</Start>		
+			</Container>
+		</Item>
+		<Item id="1004" desc="baidu combo box" rank="false" eval="false">
+			<Path class="^c-container.*?">div</Path>
+			<SetStructure>combo box[div][class=c-container]</SetStructure>
+			<Container id="1001" level="children">
+				<Start class="c-border">div@div</Start>
+			</Container>
+        </Item>
+		<Item id="1005" desc="baidu combo box" rank="false" eval="false">
+			<Node class="^c-container.*?">div</Node>
+			<SetStructure>combo box[div][class=c-container]</SetStructure>
+			<Container id="1001" level="children">
+				<Start class="c-border">div</Start>
+			</Container>
+        </Item>
+        <Item id="1006" desc="baidu combo box generalqa" rank="false" eval="false">
+            <Node class="^result-op c-container.*?" tpl="generalqa">div</Node>
+            <SetStructure>combo box[div][class=c-container]</SetStructure>
+            <Container id="1001" level="children">
+                <Start class="op_generalqa_ext.*?">div@div</Start>
+            </Container>
+        </Item>
+		<!-- Not search result element -->
+		<Item id="200" desc="baidu fake hint" save="false" eval="false">
+			<Node class="sftip se_common_hint$">table</Node>
+			<!--Path class="defaultbg$" text="百度提示您.*?">tbody@tr@td@strong</Path-->
+		</Item>		
+		<Item id="202" desc="baidu qc hint" save="false" eval="false" keep="false" rank="false">
+			<Node id="" class="^hit_top$">p</Node>
+			<!--Path class="^f14$" text="^您要找的是不是.*?">strong</Path-->
+		</Item>
+		<Item id="203" desc="baidu qc hint" save="false" eval="false" keep="false" rank="false">
+			<Node id="" class="">p</Node>
+			<Path class="^f14$" text="以下是.*?的结果\:$">strong</Path>	
+        </Item>
+        <Item id="212" desc="baidu result hint" keep="false" save="false" eval="false" rank="false">
+            <Node class="^boldline.*?">div</Node>
+        </Item>
+		<Item id="204" desc="baidu result hint" save="false" eval="false">
+			<Node id="" class="">p</Node>
+			<Path class="^f14$" text="根据相关法律法规和政策.*?">b@font</Path>	
+		</Item>
+		<Item id="205" desc="baidu ads" keep="false" save="false" eval="false" rank="false">
+			<Node class=".*?ec_pp_f.*?">div</Node>
+			<SetStructure>advertise</SetStructure>
+		</Item>
+		<Item id="206" desc="baidu ads" keep="false" save="false" eval="false" rank="false">
+			<Node class=".*?ec_pp_f.*?">table</Node>
+			<SetStructure>advertise</SetStructure>
+		</Item>
+		<Item id="203" desc="baidu ads" keep="false" save="false" eval="false" rank="false">
+			<Node class=".*?ec-ppim-narrow.*?">table</Node>
+			<SetStructure>advertise</SetStructure>
+		</Item>
+		<Item id="207" desc="baidu ads" keep="false" save="false" eval="false" rank="false">
+			<Node id=".*?ec_ma_ctner$">div</Node>
+			<SetStructure>advertise</SetStructure>
+        </Item>
+        <Item id="208" desc="baidu ads" keep="false" save="false" eval="false" rank="false">
+            <Node id=".*?_canvas.*?">div</Node>
+            <SetStructure>advertise</SetStructure>
+        </Item>
+		<Item id="209" desc="baidu ads" keep="false" save="false" eval="false" rank="false">
+			<Node class=".*?EC_mr15.*?">table</Node>
+			<SetStructure>advertise</SetStructure>
+        </Item>
+		<Item id="210" desc="baidu ads" keep="false" save="false" eval="false" rank="false">
+			<Node class=".*?EC_result.*?">div</Node>
+			<SetStructure>advertise</SetStructure>
+		</Item>
+		<Item id="211" desc="baidu unsafe result">
+			<Node id="unsafe_content">div</Node>
+			<Container id="1002" level="children">
+				<Start></Start>
+			</Container>
+        </Item>
+        <Item id="212" desc="baidu sitemap" keep="false" save="false" eval="false" rank="false">
+            <Node class=".*?site_tip.*?">p</Node>
+        </Item>
+        <Item id="213" desc="baidu tip" keep="false" save="false" eval="false" rank="false">
+            <Node class=".*?sftip_com.*?">table</Node>
+        </Item>
+        <Item id="214" desc="baidu tip" keep="false" save="false" eval="false" rank="false">
+            <Node class="^hint_.*rq.*?">div</Node>
+        </Item>
+        <Item id="215" desc="baidu ads" save="false" eval="false" rank="false">
+            <Node id="" class="">div</Node>
+            <Path id=".*?_canvas.*?">div</Path>
+        </Item>
+        <Item id="216" desc="baidu ads" save="false" eval="false" rank="false">
+            <Node class=".*?EC_ppim_top.*?">table</Node>
+        </Item>
+        <Item id="217" desc="baidu ads" save="false" eval="false" rank="false">
+            <Node class="( ?[a-zA-Z_]{6}){1}( [a-zA-Z_]{6}){2,8}">table</Node>
+        </Item>
+        <Item id="218" desc="baidu ads" save="false" eval="false" rank="false">
+            <Node class="( ?[a-zA-Z_]{6}){1}( [a-zA-Z_]{6}){2,8}">div</Node>
+        </Item>
+	</Parse>
+</WebPage>

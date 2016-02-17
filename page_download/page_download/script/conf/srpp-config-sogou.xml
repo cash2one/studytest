@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<WebPage>
+	<Config>
+		<Taskid>20130727</Taskid>
+		<Engine>sogou</Engine>
+		<Encoding>utf-8</Encoding>
+		<Path>/data1/webpage/download/srss</Path>
+	</Config>
+	<Download>
+		<Method>phantomjs</Method>
+		<UrlPattern><![CDATA[http://www.sogou.com/web?query=_WORD_]]></UrlPattern>		
+		<Sleep>5</Sleep>
+	</Download>
+	<Parse>		
+		<!-- container -->
+		<!-- 品牌广告 -->
+		<Container id="3007" level="children" method="selector">
+            <Start>#PZL</Start>
+		</Container>
+		
+		<!-- 顶部一般广告 -->
+		<Container id="3008" level="children" method="selector">
+            <Start>#promotion_adv_container > div > div > ol</Start>
+		</Container>
+		
+		<!-- 正常搜索结果 -->
+		<Container id="3001" level="children">
+            <Start id="" class="aggrBox">html@body@div@div@div@div</Start>
+		</Container>
+		
+		<Container id="3002" level="children">
+            <Start id="" class="aggrBox">html@body@div@div@div@div@div</Start>
+		</Container>
+		
+		<Container id="3011" level="children">
+            <Start id="" class="aggrBox">html@body@div@div@div@div@div@div</Start>
+		</Container>
+
+		<Container id="3003" level="children">
+            <Start id="" class="aggrWrap">html@body@div@div@div@div</Start>
+		</Container>
+
+		<Container id="3004" level="children">
+			<Start id="" class="results">html@body@div@div@div@div</Start>
+		</Container>
+
+		<Container id="3005" level="children">
+            <Start id="" class="results">html@body@div@div@div@div@div</Start>
+		</Container>
+		
+		<Container id="3010" level="children">
+            <Start id="ws_results" class="results">html@body@div@div@div@div@div@div</Start>
+		</Container>
+		
+        <Container id="3006" level="children">
+            <Start class="showContent">html@body@div@div@div@div@div@div@div</Start>
+        </Container>
+		
+		<!-- 底部一般广告 -->
+		<Container id="3009" level="children" method="selector">
+            <Start>#leftbottomleadContainer > div > div > ol</Start>
+		</Container>
+		
+		<!-- item -->
+		<!-- Not search result element -->
+        <Item id="301" desc="sogou qc hint" save="false" eval="false">
+            <Node id="" class="qcrst">h2</Node>
+        </Item>
+        <!-- wxc=on -->
+        <!-- filter the span -->
+        <Item id="302" desc="sogou wxc=on span " save="false" eval="false" keep="false" rank="false">
+            <Node id="" class="">span</Node>
+        </Item>
+        <Item id="303" desc="sogou wxc=on strong " save="false" eval="false" keep="false" rank="false">
+            <Node id="" class="">strong</Node>
+        </Item>
+        <Item id="304" desc="sogou zhanzhang ignore " save="false" eval="false" keep="false" rank="false">
+            <Path class="zhanzhang">div</Path>
+        </Item>
+        <Item id="305" desc="sogou yy vr" rank="false" eval="false">
+            <Path class="yy_wra$">div</Path>
+            <Container id="3006" level="children">
+               <Start class="yy_wra$">div</Start>
+            </Container>
+        </Item>
+		
+		<!-- 品牌广告里下面两个多余的框框 -->
+       <Item id="306" container="3007" desc="sogou pzl ads" save="false" eval="false" keep="false" rank="false">
+            <Node id="" widget-id="DialogFootBtnView">div</Node>
+        </Item> 
+        <Item id="307" container="3007" desc="sogou pzl ads" save="false" eval="false" keep="false" rank="false">
+            <Node id="" widget-id="DialogTabView">div</Node>
+        </Item> 
+		
+		<!-- 品牌广告的ad_type都为1 -->
+        <Item id="308" container="3007" desc="sogou pzl ads" auto_parse="true" ad_type="1">
+            <Node id="" class=".*?pz-hd-normal">div</Node>
+        </Item> 
+		
+		<!-- 顶部一般广告的ad_type都为2 -->
+        <Item id="309" container="3008" desc="sogou top ad" auto_parse="true" ad_type="2">
+        </Item> 
+		
+		<!-- 底部一般广告的ad_type都为3 -->
+        <Item id="310" container="3009" desc="sogou bottom ad" auto_parse="true" ad_type="3">
+        </Item> 
+	</Parse>
+</WebPage>

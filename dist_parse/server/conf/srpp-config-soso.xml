@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<WebPage>
+	<Config>
+		<Taskid>20130727</Taskid>
+		<Engine>soso</Engine>
+		<Encoding>gbk</Encoding>
+		<Path>/data1/webpage/download/srss</Path>
+	</Config>
+	<Download>
+		<Method>phantomjs</Method>
+		<UrlPattern><![CDATA[http://www.soso.com/q?pid=s.idx&cid=s.idx.se&w=_WORD_]]></UrlPattern>		
+		<Sleep>1</Sleep>
+	</Download>
+	<Parse>				
+		<!-- container -->
+		<Container id="1000" level="children">
+			<Start>html@body@div@div@div@ol</Start>
+		</Container>
+		<!-- item -->
+		<!-- Not search result element -->
+		<Item id="101" desc="soso qc hint" save="false" eval="false">
+            <Node class="f_error">li</Node>
+        </Item>
+		<Item id="102" desc="soso safe-tip" save="false" eval="false">
+            <Node id="" class="">li</Node>
+            <Path text=".*?腾讯搜搜安全提示.*?">div@h2</Path>
+        </Item>
+	</Parse>
+</WebPage>

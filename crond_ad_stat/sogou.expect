@@ -1,0 +1,23 @@
+#!/usr/local/bin/expect
+
+
+set timeout 600
+set rsync_cmd "rsync --progress guest@resin%02d.web.%s.sogou-op.org:/search/logs/%s %s"
+
+set num [lrange $argv 0 0]
+set room  [lrange $argv 1 1]
+set src_file [lrange $argv 2 2]
+set dest_file [lrange $argv 3 3]
+set passwd "Sogou@)!$"
+
+
+eval spawn [format $rsync_cmd $num $room $src_file $dest_file]
+while {1} {
+	expect {
+		"yes/no" { send "yes\r";exp_continue }
+		"password:" { send "$passwd\r";break }  
+	}
+}
+expect eof  
+exit
+

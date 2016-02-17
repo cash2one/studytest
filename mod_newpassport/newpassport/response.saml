@@ -1,0 +1,88 @@
+<!-- origin encoding was: <?xml version="1.0" encoding="ISO-8859-1" ?> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Authentication Assertion</title>
+	</head>
+	<body onload='document.forms[0].submit()'>
+		<form action='http://test.wendao.com:80/shire.jp' method='post'>
+			<input type='hidden' name='target' value='http://test.wendao.com:80/shire.jp' />
+			<input type='hidden' name='samlResponse' value='PFJlc3BvbnNlIHhtbG5zPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjA6cHJvdG9jb2wiIHhtbG5zOnNhbWw9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjEuMDphc3NlcnRpb24iIHhtbG5zOnNh
+															bWxwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoxLjA6cHJvdG9jb2wiIHhtbG5zOnhzZD0iaHR0
+															cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5v
+															cmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIElzc3VlSW5zdGFudD0iMjAxNC0wNi0wNFQxMzo0
+															NzowNy43MTBaIiBNYWpvclZlcnNpb249IjEiIE1pbm9yVmVyc2lvbj0iMSIgUmVzcG9uc2VJRD0i
+															aGNsZWFsYW5qa2NuY2xwZ2JhbGlmaWRnZm5hbWVja2ciPjxkczpTaWduYXR1cmUgeG1sbnM6ZHM9
+															Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPgo8ZHM6U2lnbmVkSW5mbz4KPGRz
+															OkNhbm9uaWNhbGl6YXRpb25NZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAx
+															LzEwL3htbC1leGMtYzE0biMiPjwvZHM6Q2Fub25pY2FsaXphdGlvbk1ldGhvZD4KPGRzOlNpZ25h
+															dHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNy
+															c2Etc2hhMSI+PC9kczpTaWduYXR1cmVNZXRob2Q+CjxkczpSZWZlcmVuY2UgVVJJPSIjaGNsZWFs
+															YW5qa2NuY2xwZ2JhbGlmaWRnZm5hbWVja2ciPgo8ZHM6VHJhbnNmb3Jtcz4KPGRzOlRyYW5zZm9y
+															bSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQt
+															c2lnbmF0dXJlIj48L2RzOlRyYW5zZm9ybT4KPGRzOlRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6
+															Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PGVjOkluY2x1c2l2ZU5hbWVzcGFj
+															ZXMgeG1sbnM6ZWM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyIgUHJl
+															Zml4TGlzdD0iY29kZSBkcyBraW5kIHJ3IHNhbWwgc2FtbHAgdHlwZW5zICNkZWZhdWx0IHhzZCB4
+															c2kiPjwvZWM6SW5jbHVzaXZlTmFtZXNwYWNlcz48L2RzOlRyYW5zZm9ybT4KPC9kczpUcmFuc2Zv
+															cm1zPgo8ZHM6RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMC8w
+															OS94bWxkc2lnI3NoYTEiPjwvZHM6RGlnZXN0TWV0aG9kPgo8ZHM6RGlnZXN0VmFsdWU+UWwvRG01
+															ZlRFQ1E4ellmdUhacjlPY1ZxSE5nPTwvZHM6RGlnZXN0VmFsdWU+CjwvZHM6UmVmZXJlbmNlPgo8
+															L2RzOlNpZ25lZEluZm8+CjxkczpTaWduYXR1cmVWYWx1ZT4KR3pZU2xxQVBHbzVMK1ZUc3dZS3h6
+															RTRadWlKVlBrWkFCb2FoOWFWMlVNSkN6WWV0YzRYREFFWXpFM3FRYjhGNFRKMEdIbWZ4TmhVWgp0
+															UkE3aTFyV2JBUDVSS1FobnJiR1hBV0k2SW50TW0yVkY5Q3g2SXN0dHFwdGc4eXFqNS9KbU9zY1NH
+															K0Q3YkFuTHJaT05tckxKb1dYCm5qYk10dnZOVkJjWEEvVHFWYTA9CjwvZHM6U2lnbmF0dXJlVmFs
+															dWU+CjwvZHM6U2lnbmF0dXJlPjxTdGF0dXM+PFN0YXR1c0NvZGUgVmFsdWU9InNhbWxwOlN1Y2Nl
+															c3MiPjwvU3RhdHVzQ29kZT48L1N0YXR1cz48QXNzZXJ0aW9uIHhtbG5zPSJ1cm46b2FzaXM6bmFt
+															ZXM6dGM6U0FNTDoxLjA6YXNzZXJ0aW9uIiBBc3NlcnRpb25JRD0icG5qZ21kZGtqaWduZm5samRs
+															b3BmZGppYXBvb2dtaGoiIElzc3VlSW5zdGFudD0iMjAxNC0wNi0wNFQxMzo0NzowNy43MTBaIiBJ
+															c3N1ZXI9Imh0dHA6Ly9wYXNzcG9ydC5zb2dvdS1pbmMuY29tIiBNYWpvclZlcnNpb249IjEiIE1p
+															bm9yVmVyc2lvbj0iMSI+PENvbmRpdGlvbnMgTm90QmVmb3JlPSIyMDE0LTA2LTA0VDEzOjQ2OjA3
+															LjcxMFoiIE5vdE9uT3JBZnRlcj0iMjAxNC0wNi0xOFQxMzo0NzowNy43MTBaIj48L0NvbmRpdGlv
+															bnM+PEF1dGhlbnRpY2F0aW9uU3RhdGVtZW50IEF1dGhlbnRpY2F0aW9uSW5zdGFudD0iMjAxNC0w
+															Ni0wNFQxMzo0NzowNy43MTBaIiBBdXRoZW50aWNhdGlvbk1ldGhvZD0idXJuOm9hc2lzOm5hbWVz
+															OnRjOlNBTUw6MS4wOmFtOnBhc3N3b3JkIj48U3ViamVjdD48TmFtZUlkZW50aWZpZXI+bGl1eW9u
+															Z3NodWFpQHNvZ291LWluYy5jb208L05hbWVJZGVudGlmaWVyPjwvU3ViamVjdD48L0F1dGhlbnRp
+															Y2F0aW9uU3RhdGVtZW50PjwvQXNzZXJ0aW9uPjwvUmVzcG9uc2U+' />
+		</form>
+	</body>
+</html>
+
+
+
+<!--base64_decode(samlResponse)：-->
+<Response xmlns="urn:oasis:names:tc:SAML:1.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion" xmlns:samlp="urn:oasis:names:tc:SAML:1.0:protocol" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" IssueInstant="2014-06-04T13:47:07.710Z" MajorVersion="1" MinorVersion="1" ResponseID="hclealanjkcnclpgbalifidgfnameckg">
+    <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:SignedInfo>
+            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></ds:CanonicalizationMethod>
+            <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></ds:SignatureMethod>
+            <ds:Reference URI="#hclealanjkcnclpgbalifidgfnameckg">
+                <ds:Transforms>
+                    <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></ds:Transform>
+                    <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                        <ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="code ds kind rw saml samlp typens #default xsd xsi"></ec:InclusiveNamespaces>
+                    </ds:Transform>
+                </ds:Transforms>
+                <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
+                <ds:DigestValue>Ql/Dm5fTECQ8zYfuHZr9OcVqHNg=</ds:DigestValue>
+            </ds:Reference>
+        </ds:SignedInfo>
+        <ds:SignatureValue>
+        GzYSlqAPGo5L+VTswYKxzE4ZuiJVPkZABoah9aV2UMJCzYetc4XDAEYzE3qQb8F4TJ0GHmfxNhUZ
+        tRA7i1rWbAP5RKQhnrbGXAWI6IntMm2VF9Cx6Isttqptg8yqj5/JmOscSG+D7bAnLrZONmrLJoWX
+        njbMtvvNVBcXA/TqVa0=
+        </ds:SignatureValue>
+    </ds:Signature>
+    <Status>
+        <StatusCode Value="samlp:Success"></StatusCode>
+    </Status>
+    <Assertion xmlns="urn:oasis:names:tc:SAML:1.0:assertion" AssertionID="pnjgmddkjignfnljdlopfdjiapoogmhj" IssueInstant="2014-06-04T13:47:07.710Z" Issuer="http://passport.sogou-inc.com" MajorVersion="1" MinorVersion="1">
+        <Conditions NotBefore="2014-06-04T13:46:07.710Z" NotOnOrAfter="2014-06-18T13:47:07.710Z"></Conditions>
+        <AuthenticationStatement AuthenticationInstant="2014-06-04T13:47:07.710Z" AuthenticationMethod="urn:oasis:names:tc:SAML:1.0:am:password">
+            <Subject>
+                <NameIdentifier>liuyongshuai@sogou-inc.com</NameIdentifier>
+            </Subject>
+        </AuthenticationStatement>
+    </Assertion>
+</Response>

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<WebPage>
+	<Config>
+		<Taskid>20130727</Taskid>
+		<Engine>sogou</Engine>
+		<Encoding>utf-8</Encoding>
+		<Path>/data1/webpage/download/srss</Path>
+	</Config>
+	<Download>
+		<Method>phantomjs</Method>
+		<UrlPattern><![CDATA[http://www.sogou.com/web?query=_WORD_]]></UrlPattern>		
+		<Sleep>5</Sleep>
+	</Download>
+	<Parse>		
+		<!-- container -->
+		<!-- 品牌广告（id慎改） -->
+		<Container id="3007" level="children" method="selector">
+            <Start>#PZL</Start>
+		</Container>
+		
+		<!-- 顶部一般广告（id慎改） -->
+		<Container id="3008" level="children" method="selector">
+            <Start>#promotion_adv_container > div > div > ol</Start>
+		</Container>
+		
+		<!-- 正常搜索结果 -->
+        <!-- 顶部的大聚合，有时跟results并列，有时在result里面 -->
+		<Container id="3001" level="children" method="selector">
+            <Start>#main > div > .aggrBox</Start>
+		</Container>
+		<Container id="3002" level="children" method="selector">
+            <Start>#sogou_ws_results > div > .aggrBox</Start>
+		</Container>
+        <!-- 就是下面这货，必须在下面的item里将此从results移除，避免重复解析 -->
+		<Container id="3011" level="children" method="selector">
+            <Start>#main > div > .results> .aggrBox</Start>
+		</Container>
+
+		<Container id="3003" level="children" method="selector">
+            <Start>#main > div > .aggrWrap </Start>
+		</Container>
+
+        <!-- 最正常的搜索结果，通常包在.results的div里 -->
+		<Container id="3004" level="children" method="selector">
+			<Start>#main > div > .results</Start>
+		</Container>
+		<Container id="3005" level="children" method="selector">
+            <Start>#sogou_ws_results > div > .results</Start>
+		</Container>
+		
+        <Container id="3006" level="children" method="selector">
+            <Start>#main > div > .results > .showContentBox > .showContent</Start>
+        </Container>
+		
+		<!-- 底部一般广告（id慎改） -->
+		<Container id="3009" level="children" method="selector">
+            <Start>#leftbottomleadContainer > div > div > ol</Start>
+		</Container>
+		
+		<!-- item -->
+		<!-- Not search result element -->
+        <Item id="301" desc="sogou qc hint" save="false" eval="false">
+            <Node id="" class="qcrst">h2</Node>
+        </Item>
+        <!-- wxc=on -->
+        <!-- filter the span -->
+        <Item id="302" desc="sogou wxc=on span " save="false" eval="false" keep="false" rank="false">
+            <Node id="" class="">span</Node>
+        </Item>
+        <Item id="303" desc="sogou wxc=on strong " save="false" eval="false" keep="false" rank="false">
+            <Node id="" class="">strong</Node>
+        </Item>
+        <Item id="304" desc="sogou zhanzhang ignore " save="false" eval="false" keep="false" rank="false">
+            <Path class="zhanzhang">div</Path>
+        </Item>
+        <Item id="305" desc="sogou yy vr" rank="false" eval="false">
+            <Path class="yy_wra$">div</Path>
+            <Container id="3006" level="children">
+               <Start class="yy_wra$">div</Start>
+            </Container>
+        </Item>
+
+        <!-- 大聚合结果在正常结果里面的，如“手足口病” -->
+        <Item id="311" container="3011" desc="aggrBox in results list" save="false" eval="false" keep="false" rank="false">
+            <Node class="aggrBox">div</Node>
+        </Item>
+         <Item id="312" container="3003" desc="aggrWrap" auto_parse="true">
+             <Remove id=".*?sogou_vr.*?" class="aggrPhbox">div</Remove>
+         </Item>
+
+		<!-- 品牌广告里下面两个多余的框框 -->
+       <Item id="306" container="3007" desc="sogou pzl ads" save="false" eval="false" keep="false" rank="false">
+            <Node id="" widget-id="DialogFootBtnView">div</Node>
+        </Item>
+        <Item id="307" container="3007" desc="sogou pzl ads" save="false" eval="false" keep="false" rank="false">
+            <Node id="" widget-id="DialogTabView">div</Node>
+        </Item>
+		<!-- 品牌广告的ad_type都为1 -->
+        <Item id="308" container="3007" desc="sogou pzl ads" auto_parse="true" ad_type="1">
+            <Node id="" class=".*?pz-hd-normal">div</Node>
+        </Item>
+		<!-- 顶部一般广告的ad_type都为2 -->
+        <Item id="309" container="3008" desc="sogou top ad" auto_parse="true" ad_type="2">
+        </Item>
+		<!-- 底部一般广告的ad_type都为3 -->
+        <Item id="310" container="3009" desc="sogou bottom ad" auto_parse="true" ad_type="3">
+        </Item>
+	</Parse>
+</WebPage>

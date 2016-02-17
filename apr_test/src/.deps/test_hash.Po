@@ -1,0 +1,3 @@
+test_hash.o: test_hash.c /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

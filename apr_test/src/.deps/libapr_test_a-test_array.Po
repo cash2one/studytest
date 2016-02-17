@@ -1,0 +1,3 @@
+libapr_test_a-test_array.o: test_array.c /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<WebPage>
+	<Config>
+		<Taskid>20130727</Taskid>
+		<Engine>sogou</Engine>
+		<Encoding>utf-8</Encoding>
+		<Path>/data1/webpage/download/srss</Path>
+	</Config>
+	<Download>
+		<Method>phantomjs</Method>
+		<UrlPattern><![CDATA[http://wenwen.sogou.com/s/?w=_WORD_]]></UrlPattern>
+		<Sleep>5</Sleep>
+	</Download>
+	<Parse>
+		<Container id="3000" level="children" method="selector">
+            <Start>#sogou_search_result_list > .result_list</Start>
+		</Container>
+	</Parse>
+</WebPage>

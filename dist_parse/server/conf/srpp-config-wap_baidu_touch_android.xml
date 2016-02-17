@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<WebPage>
+	<Config>
+		<Taskid>20130726</Taskid>
+		<Engine>wap_baidu_touch_android</Engine>	<!-- andriod -->
+		<Encoding>utf-8</Encoding>
+		<Path>./download/srss</Path>
+	</Config>
+	<Download>
+		<Method>phantomjs</Method>
+		<UrlPattern><![CDATA[http://m.baidu.com/ssid=0/from=0/bd_page_type=1/uid=EFC3330C721ED7516253F364D1902187/pu=sz%401320_2001%2Cusm%402%2Cta%40iphone_1_5.1_3_534/s?ref=www_iphone&prest=11104i&rn=10&pn=0&st=11104i&tn=iphone&tj=i_sbtn1_3545_inp&hisv=0&sugv=1&sug_edit=0&rawqs=&stime=1361965080914&mobile_se=0&showdirtype=&word=_WORD_]]></UrlPattern>
+		<UA><![CDATA[Mozilla/5.0 (Linux; U; Android 2.3.5; zh-CN; GT-I9100G Build/GINGERBREAD) AppleWebKit/534.31 (KHTML, like Gecko) UCBrowser/8.8.3.278 U3/0.8.0 Mobile Safari/534.31]]></UA>
+		<Sleep>1</Sleep>
+	</Download>
+	<Parse>
+		<Redirect scheme="http://m\.baidu\.com.*?">true</Redirect>
+		<NodeAttr>id,data-click,data-op,data-log,mu,cellspacing,cellpadding,height,width,style,bgcolor,border</NodeAttr>
+		<!-- container -->
+		<Container id="6000" level="children">
+			<Start id="results$" class="results$">html@body@div@div</Start>
+		</Container>							
+		<!-- combo box -->
+		<Item id="6001" desc="baidu wap combo box#1 - 影视" rank="false" eval="false">
+			<Node class="wise-cards result card-result$" >div</Node>
+			<SetStructure>combo box{div[class="wise-cards result card-result$"]}</SetStructure>
+			<Container id="6001" level="children">
+				<Start></Start>
+			</Container>
+		</Item>				
+		<Item id="6002" desc="baidu wap combo box#2 - 影视" rank="false" eval="false">
+			<Node class="result card-result$" tpl="">div</Node>
+			<SetStructure>combo box{div[class="result card-result$" tpl=""]}</SetStructure>
+			<Container id="6002" level="children">
+				<Start class="wise-cards$">div</Start>
+			</Container>
+		</Item>		
+		<Item id="6003" desc="baidu wap combo box#3 - 影视" rank="false" eval="false">
+			<Node class="result card-result card_container$" srcid=".*?" tpl="">div</Node>
+			<SetStructure>combo box{div[class="result card-result card_container$" srcid=".*?" tpl=""]}</SetStructure>
+			<Container id="6003" level="children">
+				<Start></Start>
+			</Container>
+		</Item>
+		<Item id="6004" desc="baidu wap sub combo box#1(#3) - 影视" parent="6003" rank="false" eval="false">
+			<Node class="sigma$">div</Node>
+			<SetStructure>combo box{div[class="sigma$"]}</SetStructure>
+			<Container id="6004" level="children">
+				<Start></Start>
+			</Container>
+		</Item>
+		
+		<Item id="6005" desc="baidu wap combo box#4 - 旅店,产品" rank="false" eval="false">
+			<Node class="card-result wa-ue-card-result$" srcid=".*?" tpl="(hotel\d?|mobunlisted|mobgoods\d?)$">div</Node>			
+			<SetStructure>combo box{div[class="card-result wa-ue-card-result$" srcid=".*?" tpl="(hotel\d?|mobunlisted|mobgoods\d?)$"]}</SetStructure>
+			<Container id="6005" level="children">
+				<Start class="abs$">div</Start>
+			</Container>			
+		</Item>
+		<Item id="6006" desc="baidu wap combo box#4 - 车次查询" rank="false" eval="false">
+			<Node class="card-result wa-ue-card-result$" tpl="web_app_param">div</Node>
+			<SetStructure>combo box{div[class="card-result wa-ue-card-result$" tpl="web_app_param"]}</SetStructure>
+			<Container id="6006" level="children">
+				<Start class="abs$">div</Start>
+			</Container>			
+		</Item>
+				
+		<Item id="6007" desc="baidu wap combo box#5 - 名人" rank="false" eval="false">
+			<Node class=".*?card-result$"  tpl="sigma_celebrity">div</Node>
+			<SetStructure>combo box{div[class=".*?card-result$"  tpl="sigma_celebrity"]}</SetStructure>
+			<Container id="6007" level="children">
+				<Start class="(wa-ue-card-result|abs)">div</Start>
+			</Container>
+		</Item>                
+		<Item id="6008" desc="baidu wap combo box#5 - 电视剧" rank="false" eval="false">
+			<Node class=".*?card-result$"  srcid="sigma_tvseries">div</Node>
+			<SetStructure>combo box{div[class=".*?card-result$"  srcid="sigma_tvseries"]}</SetStructure>
+			<Container id="6008" level="children">
+				<Start></Start>
+			</Container>
+		</Item>		
+		<Item id="6009" desc="baidu wap combo box#5 - hospital" rank="false" eval="false">
+			<Node tpl="sigma_hospital">div</Node>
+			<SetStructure>combo box{div[tpl="sigma_hospital"]}</SetStructure>
+			<Container id="6009" level="children">
+				<Start class="wa-ue-card-result">div</Start>
+			</Container>
+		</Item>
+		
+		<Item id="6010" desc="baidu wap combo box#5 - 音乐" rank="false" eval="false">
+			<Node class="card-result$" srcid=".*?" tpl="(ting)$">div</Node>
+			<SetStructure>combo box{div[class="card-result$" srcid=".*?" tpl="(ting)$"]}</SetStructure>
+			<!--Container id="6010" level="children">
+				<Start class="abs$">div</Start>
+			</Container-->
+		</Item>
+		<!--Item id="6011" desc="baidu wap sub combo box#1(#5) - 音乐" parent="6010" rank="false" eval="false">
+			<Node class="wa-ue-card-result$" style=".*?" srcid="" tpl="">div</Node>
+			<SetStructure>combo box{div[class="wa-ue-card-result$" style=".*?" srcid="" tpl=""]}</SetStructure>
+			<Container id="6011" level="children">
+				<Start></Start>
+			</Container>
+		</Item-->
+		
+		<Item id="6012" desc="baidu wap combo box#6 - 旅游攻略" rank="false" eval="false">
+			<Node class="card_container result card-result$" srcid=".*?" tpl="">div</Node>
+			<SetStructure>combo box{div[class="card_container result card-result$" srcid=".*?" tpl=""]}</SetStructure>
+			<Path class=".*?title.*?" text=".*?旅游攻略$">div@div@a</Path>
+			<Remove text=".*?new card\(\)\.init\(&quot;\d+&quot;\).*?">script</Remove>
+			<Container id="6012" level="children">
+				<Start></Start>
+			</Container>
+		</Item>		
+		<Item id="6013" desc="baidu wap combo box#6 - 列车查询" rank="false" eval="false">
+			<Node class="card_container result card-result$" srcid=".*?" tpl="">div</Node>
+			<SetStructure>combo box{div[class="card_container result card-result$" srcid=".*?" tpl=""]}</SetStructure>
+			<Path class="result_title$" text=".*?列车查询.*?">div@div@a</Path>
+			<Remove text=".*?new card\(\)\.init\(&quot;\d+&quot;\).*?">script</Remove>
+			<Container id="6013" level="children">
+				<Start></Start>
+			</Container>
+		</Item>				
+		<Item id="6014" desc="baidu wap combo box#6(旅游攻略,列车查询) - subresult#1" parent="6013">
+			<Node class="(ms-travel[0-9]*?|card|wa_trainopen)">div</Node>
+			<Url>div@a</Url>
+			<Remove text=".*?new card\(\)\.init\(&quot;\d+&quot;\);.*?">script</Remove>
+		</Item>
+		<Item id="6015" desc="baidu wap combo box(news)">
+			<Node class="ms-wisehot$">div</Node>
+			<SetStructure>combo box{div[class="ms-wisehot$"]}</SetStructure>
+			<Container id="6015" level="children">
+				<Start></Start>
+			</Container>
+		</Item>
+		<Item id="6016" desc="baidu wap combo box(news)">
+			<Node class="wise-cards result card-result$" srcid="wise_hot$">div</Node>
+			<SetStructure>combo box{div[class="wise-cards result card-result$" srcid="wise_hot$"]}</SetStructure>
+			<Container id="6016" level="children">
+				<Start class="ms-wisehot$">div</Start>
+			</Container>
+		</Item>
+		<Item id="6017" desc="baidu wap combo box#5 - 电视剧" rank="false" eval="false">
+			<Node class=".*?card-result$"  tpl="sigma_disease">div</Node>
+			<SetStructure>combo box{div[class=".*?card-result$" tpl="sigma_disease"]}</SetStructure>
+			<Container id="6017" level="children">
+				<Start class="wa-ue-card-result$">div</Start>
+			</Container>
+		</Item>
+		<!-- useless: ads, display-none -->
+		<Item id="6900" desc="baidu wap ads" keep="false" save="false" eval="false">
+			<Node class="ec_.*?_ad$" srcid="" tpl="">div</Node>
+			<SetStructure>advertise</SetStructure>
+		</Item>
+		<!--Item id="6901" desc="baidu wap display-none" save="false" eval="false">
+			<Node style="display:none.*?">img</Node>			
+		</Item>
+		<Item id="6901" desc="baidu wap display-none" save="false" eval="false">
+			<Node style="display:none.*?">div</Node>			
+		</Item>
+		<Item id="6901" desc="baidu wap display-none" save="false" eval="false">
+			<Node style="display:none.*?">textarea</Node>			
+		</Item>
+		<Item id="6901" desc="baidu wap placeholder" save="false" eval="false">
+			<Node style=".*?" id="" class="" text="">div</Node>			
+		</Item-->
+	</Parse>
+</WebPage>

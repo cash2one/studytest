@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<WebPage>
+	<Config>
+		<Taskid>20130727</Taskid>
+		<Engine>360so</Engine>
+		<Encoding>utf-8</Encoding>
+		<Path>/data1/webpage/download/srss</Path>
+	</Config>
+	<Download>
+		<Method>phantomjs</Method>
+		<UrlPattern><![CDATA[http://www.so.com/s?q=_WORD_]]></UrlPattern>		
+		<Sleep>1</Sleep>
+	</Download>
+	<Parse>		
+		<Redirect scheme="http://so\.qh-lb\.com/url\?u=.*?">false</Redirect>
+		<!-- container -->
+		<Container id="4000" level="children">			
+			<Start id="m-result" class="result$">html@body@div@div@div@ul</Start>
+        </Container>
+		<!-- combo box -->
+		<Item id="4001" desc="360 combo box" rank="false" eval="false">
+			<Path text=".*?以上信息由360搜索整合.*?"></Path>
+			<Path class="box-inner">div@div@div</Path>
+			<SetStructure>combo box[div@div@div][class="box-inner"]</SetStructure>
+			<Container id="4001" level="children">
+				<Start class="box-inner">div@div@div</Start>
+			</Container>
+		</Item>
+		<Item id="4002" desc="360 combo box" rank="false" eval="false">
+			<Path text=".*?以上信息由360搜索整合.*?"></Path>
+			<Path class="total-cont$">div@div</Path>
+			<SetStructure>combo box[div@div][class="total-cont"]</SetStructure>
+			<Container id="4002" level="children">
+				<Start class="total-cont$">div@div</Start>
+			</Container>
+		</Item>
+		<Item id="4003" desc="360 combo box" rank="false" eval="false">
+			<Path text=".*?以上信息由360搜索整合.*?"></Path>
+			<Path class="cont$">div@div</Path>
+			<SetStructure>combo box[div@div][class="cont"]</SetStructure>
+			<Container id="4002" level="children">
+				<Start class="cont$">div@div</Start>
+			</Container>
+		</Item>
+		<Item id="4004" desc="360 combo box" rank="false" eval="false">
+			<Path text=".*?相关信息根据网络信息自动整理.*?"></Path>
+			<Path class="box-inner.*?">div@div@div</Path>
+			<SetStructure>combo box[div@div@div][class="box-inner.*?"]</SetStructure>
+			<Container id="4004" level="children">
+				<Start class="box-inner.*?">div@div@div</Start>
+			</Container>
+        </Item>
+        <Item id="4005" desc="360 combo box" rank="false" eval="false">
+            <Path class="total-cont$">div@div</Path>
+            <SetStructure>combo box[div@div][class="total-cont"]</SetStructure>
+            <Container id="4005" level="children">
+            <Start class="total-cont$">div@div</Start>
+            </Container>
+        </Item>
+        <Item id="4005" desc="ignore360applink">
+            <Path id="mohe-app">div</Path>
+            <Remove class="app-info-s.*?">li@div@div@div@div</Remove>
+        </Item>
+        <Item id="4006" desc="360 tv app alert ignore" rank="false" eval="false">
+            <Node id="mh-tv-app">div</Node>
+        </Item>
+        <Item id="4007" desc="box sub link ignore" rank="false" eval="false">
+            <Node class="gclearfix.*?">div</Node>
+        </Item>
+        <Item id="4008" desc="box sub link ignore" rank="false" eval="false">
+            <Node class="collapse">a</Node>
+        </Item>
+        <Item id="4009" desc="ignore360applink">
+            <Path id="(mohe-rili|mohe-relation_qqimage)">div</Path>
+            <Remove class=".*?">li@div</Remove>
+        </Item>
+        <Item id="4010" desc="ignore360applink">
+            <Path class="g-qiyu.*?">div</Path>
+            <Remove class=".*?">li@div</Remove>
+        </Item>
+        <Item id="4011" desc="ignore360piclink">
+            <Node id="mohe-baike_new">div</Node>
+            <Url>div@div@div@h3@a</Url>
+        </Item>
+        <Item id="4012" desc="box sub link ignore" rank="false" eval="false">
+            <Node class="icon-stand">a</Node>
+        </Item>
+        <Item id="4013" desc="ignore360applink">
+            <Path id="mohe-ask_knowledge_people_relation$">div</Path>
+            <Remove id="mohe-ask_knowledge_people_relation$">div</Remove>
+        </Item>
+        <Item id="4014" desc="ignore360applink" rank="false" eval="false">
+            <Path id="mohe-answer_vote">div</Path>
+        </Item>
+        <Item id="4015" desc="ignore360editlink" auto_parse="true" rank="true" eval="true">
+            <Path class=".*?baike-icon">h3</Path>
+            <Remove class="edit">h3@a</Remove>
+        </Item>
+        <Item id="4016" desc="ignore360wendalink" auto_parse="true" rank="true" eval="true">
+            <Path id="mohe-wenda_feiyi">div</Path>
+            <Remove class="from">div@div@a</Remove>
+        </Item>
+	</Parse>
+</WebPage>

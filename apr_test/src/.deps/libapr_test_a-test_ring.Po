@@ -1,0 +1,3 @@
+libapr_test_a-test_ring.o: test_ring.c /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:
