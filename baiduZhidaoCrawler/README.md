@@ -1,4 +1,4 @@
-需要安装： 
-python-MySQL
-scrapy
-phantomjs 
+闇�瑕佸畨瑁咃細 
+	python-MySQL
+	scrapy
+	phantomjs 
