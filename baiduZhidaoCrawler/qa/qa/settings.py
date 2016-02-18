@@ -59,7 +59,7 @@ local_ip = utils.get_local_ip()
 if local_ip in http_proxy_host and http_proxy_host[local_ip]:
     DOWNLOADER_MIDDLEWARES = {
         'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
-        'qa.middlewares.zhidaoMiddleware': 100,
+        'qa.middlewares.qaMiddleware': 100,
     }
 
 
@@ -72,7 +72,7 @@ if local_ip in http_proxy_host and http_proxy_host[local_ip]:
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'qa.pipelines.zhidaoPipeline': 300,
+    'qa.pipelines.qaPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

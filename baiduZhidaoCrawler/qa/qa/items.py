@@ -8,7 +8,7 @@
 import scrapy
 
 
-class zhidaoItem(scrapy.Item):
+class qaItem(scrapy.Item):
     qId = scrapy.Field()
     qTitle = scrapy.Field()
     qContent = scrapy.Field()

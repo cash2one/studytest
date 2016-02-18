@@ -6,8 +6,6 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 from common.DB import DB
 from common.config import mysql_host
-from urllib import unquote
-import time
 
 
 class seedwordPipeline(object):

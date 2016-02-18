@@ -6,14 +6,15 @@ mysql_host = dict({
         "user": "phpmyadmin",
         "passwd": "123456",
         "host": "127.0.0.1",
-        "db": "qa",
+        "db": "baidu_zhidao",
         "port": 3306,
         "charset": "utf8"
-    }, "db_lmcrawl_slave": {
+    },
+    "db_lmcrawl_slave": {
         "user": "phpmyadmin",
         "passwd": "123456",
         "host": "127.0.0.1",
-        "db": "qa",
+        "db": "baidu_zhidao",
         "port": 3306,
         "charset": "utf8"
     }

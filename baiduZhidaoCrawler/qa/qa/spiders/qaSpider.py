@@ -2,7 +2,7 @@
 import scrapy
 import re,sys,os
 from scrapy.selector import Selector
-from baidu_zhidao.items import zhidaoItem
+from qa.items import qaItem
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider,Rule
 from common.DB import DB
@@ -11,7 +11,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 class qaSpider(CrawlSpider):
-    name = "zhidao"
+    name = "qa"
     allowed_domains = ["zhidao.baidu.com"]
 
     pattern = re.compile(r'^http:\/\/zhidao\.baidu\.com\/question\/\d+\.html.*$')
@@ -96,7 +96,7 @@ class qaSpider(CrawlSpider):
             if not aMatch:
                 aMatch = re.match(r'<div\s+id="(answer-content)(.*?)".*?>(.*?)<\/div>', aContent)
             if aMatch:
-                item = zhidaoItem()
+                item = qaItem()
                 #回答的类型：1被采纳的回答（最好的），2网友推荐的回答（次好的），3其他回答（较次的）
                 item["aType"] = 0
                 aType = aMatch.group(1)

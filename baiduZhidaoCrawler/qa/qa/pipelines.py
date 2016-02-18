@@ -10,7 +10,7 @@ from common.config import mysql_host
 from urllib import unquote
 
 
-class zhidaoPipeline(object):
+class qaPipeline(object):
     slave = DB(**mysql_host["db_lmcrawl_slave"])
     master = DB(**mysql_host["db_lmcrawl_master"])
 
