@@ -27,7 +27,9 @@ while True:
         r.sadd("baidu_zhidao_qid", qid)
 
 # 开始查询所有的种子关键词进行抓取
-startId = 0
+max_seed_id = "baidu_zhidao_maxseed_id"
+sid = r.get(max_seed_id)
+startId = int(sid) if sid else 0
 while True:
     wordlist = db.fetch_all(
         "SELECT * FROM `seedword` WHERE `id` > " + str(startId) + " ORDER BY `id` ASC LIMIT " + str(psize))
@@ -35,6 +37,7 @@ while True:
         break
     for word in wordlist:
         startId = word["id"]
+        r.set(max_seed_id,startId)
         w = word["word"].strip()
         w = unquote(w)
         cmd = "cd ./qa;scrapy crawl qa -a query=\"%s\"" % w
