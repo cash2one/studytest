@@ -31,12 +31,12 @@ class qaPipeline(object):
             ret = ret["total"]
             if not ret:
                 iData = dict({
-                                 "qid": qId,
-                                 "title": unquote(qTitle),
-                                 "content": unquote(qContent),
-                                 "tag": unquote(qTag),
-                                 "url": unquote(qUrl)
-                                 })
+                    "qid": qId,
+                    "title": unquote(qTitle),
+                    "content": unquote(qContent),
+                    "tag": unquote(qTag),
+                    "url": unquote(qUrl)
+                })
                 uData = dict({"title": unquote(qTitle), "content": unquote(qContent), "tag": unquote(qTag),})
                 self.master.insert_update("question", iData, uData)
 
@@ -44,5 +44,8 @@ class qaPipeline(object):
                 insertData = dict({"aid": aId, "qid": qId, "content": unquote(aContent), "type": aType})
                 updateData = dict({"content": unquote(aContent), "type": aType})
                 self.master.insert_update("answer", insertData, updateData)
+
+                # 问题的标题作为种子词继续搜索
+                self.master.insert("seedword", word=unquote(qTitle))
 
         return item
