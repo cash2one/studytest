@@ -12,6 +12,6 @@ class seedwordPipeline(object):
     def process_item(self, item, spider):
         seedword = item.get("seedword", "")
         if seedword:
-            db = DB(**mysql_host["db_lmcrawl_master"])
+            db = DB(**mysql_host["db_master"])
             db.insert("seedword", word=seedword)
         return item

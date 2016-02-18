@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # mysql的配置信息
-mysql_host = dict({
-    "db_lmcrawl_master": {
+mysql_host = {
+    "db_master": {
         "user": "phpmyadmin",
         "passwd": "123456",
         "host": "127.0.0.1",
@@ -10,7 +10,7 @@ mysql_host = dict({
         "port": 3306,
         "charset": "utf8"
     },
-    "db_lmcrawl_slave": {
+    "db_slave": {
         "user": "phpmyadmin",
         "passwd": "123456",
         "host": "127.0.0.1",
@@ -18,15 +18,29 @@ mysql_host = dict({
         "port": 3306,
         "charset": "utf8"
     }
-})
+}
+
+# redis的配置信息
+redis_host = {
+    "master": {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "db": 0
+    },
+    "slave": {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "db": 0
+    }
+}
 
 # 各台部署机器上使用的proxy
-http_proxy_host = dict({
+http_proxy_host = {
     "10.137.129.160": "http://10.240.80.91:8080",
     "10.130.65.141": "http://10.240.80.92:8080",
     "10.240.80.49": "",
     "10.240.80.95": "",
-})
+}
 
 # user-agent列表，每次随机取一个
 user_agent_list = list([

@@ -7,12 +7,15 @@
 
 from common.DB import DB
 from common.config import mysql_host
+from common.config import redis_host
 from urllib import unquote
+import redis
 
 
 class qaPipeline(object):
-    slave = DB(**mysql_host["db_lmcrawl_slave"])
-    master = DB(**mysql_host["db_lmcrawl_master"])
+    slave = DB(**mysql_host["db_slave"])
+    master = DB(**mysql_host["db_master"])
+    redis_pool = redis.ConnectionPool(**redis_host["master"])
 
     def process_item(self, item, spider):
         qId = item.get("qId", 0)
@@ -47,5 +50,9 @@ class qaPipeline(object):
 
                 # 问题的标题作为种子词继续搜索
                 self.master.insert("seedword", word=unquote(qTitle))
+
+                #问题的ID添加到Redis里
+                r = redis.Redis(connection_pool=self.redis_pool)
+                r.sadd("baidu_zhidao_qid",qId)
 
         return item
