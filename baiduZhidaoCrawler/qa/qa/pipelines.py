@@ -6,8 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 from common.DB import DB
-from common.config import mysql_host
-from common.config import redis_host
+from common.config import *
 from urllib import unquote
 import redis
 
@@ -51,8 +50,8 @@ class qaPipeline(object):
                 # 问题的标题作为种子词继续搜索
                 self.master.insert("seedword", word=unquote(qTitle))
 
-                #问题的ID添加到Redis里
+                # 问题的ID添加到Redis里
                 r = redis.Redis(connection_pool=self.redis_pool)
-                r.sadd("baidu_zhidao_qid",qId)
+                r.sadd(baidu_zhidao_qid, qId)
 
         return item

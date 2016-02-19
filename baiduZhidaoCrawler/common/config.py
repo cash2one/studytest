@@ -34,6 +34,15 @@ redis_host = {
     }
 }
 
+#种子搜索词的Redis队列
+seedword_redis_queue = "baidu_zhidao_seedword_queue"
+
+#已抓取的所有的问题ID，排重用的
+baidu_zhidao_qid = "baidu_zhidao_qid"
+
+#存储最大的种子词ID
+max_seed_id = "baidu_zhidao_maxseed_id"
+
 # 各台部署机器上使用的proxy
 http_proxy_host = {
     "10.137.129.160": "http://10.240.80.91:8080",

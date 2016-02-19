@@ -7,8 +7,7 @@ import redis
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from common.DB import DB
-from common.config import mysql_host
-from common.config import redis_host
+from common.config import *
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -22,11 +21,8 @@ class qaSpider(CrawlSpider):
     t = re.compile(r'<.*?>')
     q = re.compile(r'<\/?(?:a|span).*?>')
     db = DB(**mysql_host["db_slave"])
-    redis_pool = redis.ConnectionPool(**redis_host["slave"])
-
-    def __init__(self, query = None, wfile = None):
-        self.query = query
-        self.file = wfile
+    redis_pool_slave = redis.ConnectionPool(**redis_host["slave"])
+    redis_pool_master = redis.ConnectionPool(**redis_host["master"])
 
     ################################################################
     # 处理搜索结果页面，抽取翻页的URL及单个问题详情页的URL
@@ -42,7 +38,7 @@ class qaSpider(CrawlSpider):
                     qId = qUrlMatch.group(1)
 
                 # 检查该问题是否被抓取过
-                r = redis.Redis(connection_pool=self.redis_pool)
+                r = redis.Redis(connection_pool=self.redis_pool_slave)
                 if not r.sismember("baidu_zhidao_qid", qId):
                     yield scrapy.Request(url, callback=self.parse_item)
 
@@ -127,14 +123,14 @@ class qaSpider(CrawlSpider):
 
 
 
-                # 要搜索的问题：首先读取给定的文件，否则就用给定的关键词来搜索
-
+    # 要搜索的问题：首先读取给定的文件，否则就用给定的关键词来搜索
     def start_requests(self):
-        if self.file and os.path.isfile(self.file):
-            fp = open(self.file, "r")
-            for word in fp:
-                query = word.strip()
-                yield scrapy.Request("http://zhidao.baidu.com/search?word=%s" % query)
-            fp.close()
-        else:
-            yield scrapy.Request("http://zhidao.baidu.com/search?word=%s" % self.query)
+        r = redis.Redis(connection_pool=self.redis_pool_master)
+        while True:
+            w = r.blpop(seedword_redis_queue, 5)
+            if not w:
+                continue
+            w = w[1]
+            if len(w) <= 0:
+                continue
+            yield scrapy.Request("http://zhidao.baidu.com/search?word=%s" % w)
