@@ -63,11 +63,11 @@ class cattagSpider(CrawlSpider):
                 if "tag" in arg_info:
                     tagname = arg_info["tag"][0].strip()
                     d.insert("tag", tag=tagname, cid=cid)
-                    d.insert("seedword", word=unquote(tagname))
+                    d.insert("seedword", word=unquote(tagname).strip())
                 else:
                     cname = qUrlMatch.group(2)
                     tmp = self.strip.split(cname)
                     cname = "".join(tmp)
                     d.insert("category", cid=cid, cname=cname.strip(), parent_cid=parent_cid)
-                    d.insert("seedword", word=unquote(cname))
+                    d.insert("seedword", word=unquote(cname).strip())
                 yield scrapy.Request(url, callback=self.parse)
