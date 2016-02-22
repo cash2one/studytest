@@ -9,20 +9,21 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 db = DB(**mysql_host["db_slave"])
-psize = 100000;
+psize = 1000000;
 
 # 先将所有的问题ID灌入到Redis里去
 redis_pool = redis.ConnectionPool(**redis_host["master"])
 r = redis.Redis(connection_pool=redis_pool)
-startQid = 0
+startID = 0
 while True:
     qidlist = db.fetch_all(
-            "SELECT `qid` FROM `question` WHERE `qid` >" + str(startQid) + " ORDER BY `qid` ASC LIMIT " + str(psize))
+            "SELECT `qid`,`id` FROM `question` WHERE `id` >" + str(startID) + " ORDER BY `id` ASC LIMIT " + str(psize))
     if len(qidlist) <= 0:
         break
     for id in qidlist:
         qid = str(id["qid"])
-        startQid = qid
+        startID = str(id["id"])
+        print startID
         r.sadd(baidu_zhidao_qid, qid)
 
 # 往种子搜索词队列里写入
