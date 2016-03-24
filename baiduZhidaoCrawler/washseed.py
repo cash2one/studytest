@@ -17,7 +17,7 @@ r = redis.Redis(connection_pool=redis_pool)
 
 db_slave = DB(**mysql_host["db_slave"])
 db_master = DB(**mysql_host["db_master"])
-psize = 5000000
+psize = 1000000
 
 sid = r.get(wash_max_seed_id)
 startId = int(sid) if sid else 0
