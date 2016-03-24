@@ -43,6 +43,10 @@ baidu_zhidao_qid = "baidu_zhidao_qid"
 #存储最大的种子词ID
 max_seed_id = "baidu_zhidao_maxseed_id"
 
+#洗种子
+wash_max_seed_id = "wash_max_seed_id"
+
+
 # 各台部署机器上使用的proxy
 http_proxy_host = {
     "10.137.129.160": "http://10.240.80.91:8080",
