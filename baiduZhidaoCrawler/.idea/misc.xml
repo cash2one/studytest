@@ -14,23 +14,16 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="127.0.0.1" project-jdk-type="Python SDK" />
-=======
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 2.7.6 (/usr/bin/python2.7)" project-jdk-type="Python SDK" />
->>>>>>> 2762612ccc28631ca7d29d36af7dba40642e3d2d
   <component name="SshConsoleOptionsProvider">
     <option name="myEncoding" value="UTF-8" />
     <option name="myConnectionType" value="REMOTE_SDK" />
     <option name="myConnectionId" value="ssh://root@127.0.0.1:22/usr/bin/python" />
   </component>
-<<<<<<< HEAD
-=======
   <component name="VagrantProjectSettings">
     <option name="instanceFolder" value="" />
     <option name="provider" value="" />
   </component>
->>>>>>> 2762612ccc28631ca7d29d36af7dba40642e3d2d
   <component name="masterDetails">
     <states>
       <state key="ScopeChooserConfigurable.UI">

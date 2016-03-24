@@ -17,12 +17,12 @@ r = redis.Redis(connection_pool=redis_pool)
 
 db_slave = DB(**mysql_host["db_slave"])
 db_master = DB(**mysql_host["db_master"])
-psize = 1000000;
+psize = 5000000
 
 sid = r.get(wash_max_seed_id)
 startId = int(sid) if sid else 0
 while True:
-    wordlist = db_slave.fetch_all("SELECT `title`,`id`,`content` FROM `question` WHERE `id` > " + str(startId) + " ORDER BY `id` ASC LIMIT " + str(psize))
+    wordlist = db_slave.fetch_all("SELECT `title`,`id` FROM `question` WHERE `id` > " + str(startId) + " ORDER BY `id` ASC LIMIT " + str(psize))
     if len(wordlist) <= 0:
         break
     for word in wordlist:
@@ -34,8 +34,4 @@ while True:
             db_master.insert("seedword", word=seedtitle.strip())
         if len(title) < 15 and not title.isalnum():
             db_master.insert("seedword", word=title.strip())
-        content = word["content"].strip()
-        segContent = utils.split_str(content)
-        for seedcontent in segContent:
-            db_master.insert("seedword", word=seedcontent.strip())
         r.set(wash_max_seed_id, startId)
