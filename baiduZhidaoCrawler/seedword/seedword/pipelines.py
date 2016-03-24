@@ -6,6 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 from common.DB import DB
 from common.config import mysql_host
+from urllib import unquote
 
 
 class seedwordPipeline(object):
@@ -13,5 +14,7 @@ class seedwordPipeline(object):
         seedword = item.get("seedword", "")
         if seedword:
             db = DB(**mysql_host["db_master"])
+            seedword = unquote(seedword)
+            print seedword
             db.insert("seedword", word=seedword)
         return item

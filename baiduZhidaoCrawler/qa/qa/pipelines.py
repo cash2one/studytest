@@ -6,9 +6,10 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 from common.DB import DB
+from common.utils import utils
 from common.config import *
 from urllib import unquote
-import redis
+import redis, re
 
 
 class qaPipeline(object):
@@ -48,7 +49,9 @@ class qaPipeline(object):
                 self.master.insert_update("answer", insertData, updateData)
 
                 # 问题的标题作为种子词继续搜索
-                self.master.insert("seedword", word=unquote(qTitle))
+                segTitle = utils.split_str(qTitle)
+                for seedtitle in segTitle:
+                    self.master.insert("seedword", word=seedtitle.strip())
 
                 # 问题的ID添加到Redis里
                 r = redis.Redis(connection_pool=self.redis_pool)
