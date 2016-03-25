@@ -19,5 +19,7 @@ scrapy crawl qa > /dev/null 2>&1 &
 scrapy crawl qa > /dev/null 2>&1 &
 scrapy crawl qa > /dev/null 2>&1 &
 scrapy crawl qa > /dev/null 2>&1 &
+scrapy crawl qa > /dev/null 2>&1 &
+scrapy crawl qa > /dev/null 2>&1 &
 
 
