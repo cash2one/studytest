@@ -1,6 +1,6 @@
 #!/bin/bash
-cd /data/baiduZhidaoCrawler/seedword
-scrapy crawl seedword
+cd /data/baiduZhidaoCrawler/topword
+scrapy crawl topword
 sleep 15
 cd /data/baiduZhidaoCrawler/qa
 kill -9 $(ps aux|grep crawl|grep -v grep| awk '{print $2}') 

@@ -8,8 +8,8 @@
 import scrapy
 
 
-class seedwordItem(scrapy.Item):
+class topwordItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    seedword = scrapy.Field()
+    topword = scrapy.Field()
     pass

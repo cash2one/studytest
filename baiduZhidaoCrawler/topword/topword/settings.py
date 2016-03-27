@@ -15,10 +15,10 @@ sys.path.append("%s/../../" % curdir)
 from common.config import http_proxy_host
 from common.utils import utils
 
-BOT_NAME = 'seedword'
+BOT_NAME = 'topword'
 
-SPIDER_MODULES = ['seedword.spiders']
-NEWSPIDER_MODULE = 'seedword.spiders'
+SPIDER_MODULES = ['topword.spiders']
+NEWSPIDER_MODULE = 'topword.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0'
@@ -58,7 +58,7 @@ local_ip = utils.get_local_ip()
 if local_ip in http_proxy_host and http_proxy_host[local_ip]:
     DOWNLOADER_MIDDLEWARES = {
         'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
-        'seedword.middlewares.seedwordMiddleware': 100,
+        'topword.middlewares.topwordMiddleware': 100,
     }
 
 # Enable or disable extensions
@@ -70,7 +70,7 @@ if local_ip in http_proxy_host and http_proxy_host[local_ip]:
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'seedword.pipelines.seedwordPipeline': 300,
+    'topword.pipelines.topwordPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
