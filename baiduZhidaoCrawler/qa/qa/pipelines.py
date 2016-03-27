@@ -41,11 +41,6 @@ class qaPipeline(object):
         insertData = dict({"aid": aId, "qid": qId, "content": unquote(aContent), "type": aType})
         self.master.insert("answer", **insertData)
 
-        # 问题的标题作为种子词继续搜索
-        segTitle = utils.split_str(qTitle)
-        for seedtitle in segTitle:
-            self.master.insert("seedword", word=seedtitle.strip())
-
         # 问题的ID添加到Redis里
         r = redis.Redis(connection_pool=self.redis_pool)
         r.sadd(baidu_zhidao_qid, qId)
