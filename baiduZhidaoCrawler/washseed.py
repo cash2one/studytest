@@ -20,7 +20,6 @@ tmpList = []
 cnt = 0
 while True:
     title = r.blpop(wash_seed_queue, 5)
-    print title
     if not title:
         continue
     title = title[1]
@@ -28,12 +27,12 @@ while True:
         continue
     segTitle = utils.split_str(title)
     cnt = cnt + 1
-    print cnt
     for seedtitle in segTitle:
         tmpList.append(seedtitle)
         tmpList.append(0)
     if cnt % 100000 == 0:
         r.zadd(tmp_seed_list,*tmpList)
         tmpList = []
+        print cnt
 if tmpList:
     r.zadd(tmp_seed_list,*tmpList)
