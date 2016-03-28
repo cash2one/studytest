@@ -20,10 +20,6 @@
     <option name="myConnectionType" value="REMOTE_SDK" />
     <option name="myConnectionId" value="ssh://root@127.0.0.1:22/usr/bin/python" />
   </component>
-  <component name="VagrantProjectSettings">
-    <option name="instanceFolder" value="" />
-    <option name="provider" value="" />
-  </component>
   <component name="masterDetails">
     <states>
       <state key="ScopeChooserConfigurable.UI">
