@@ -44,5 +44,6 @@ class qaPipeline(object):
         # 问题的ID添加到Redis里
         r = redis.Redis(connection_pool=self.redis_pool)
         r.sadd(baidu_zhidao_qid, qId)
+        r.rpush(wash_seed_queue, qTitle.strip())
 
         return item
