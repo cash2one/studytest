@@ -32,12 +32,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="start.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qa/start.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.05698324">
               <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
               <folding />
+=======
+      <file leaf-file-name="washseed.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/washseed.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.15629984">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#26#50#0" expanded="true" />
+                <marker date="1459089260858" expanded="true" signature="526:620" placeholder="SELECT `titl... question" />
+              </folding>
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
             </state>
           </provider>
         </entry>
@@ -58,6 +70,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/common/utils.py" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/seedproduce.py" />
+        <option value="$PROJECT_DIR$/common/config.py" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         <option value="$PROJECT_DIR$/qa/qa/spiders/qaSpider.py" />
         <option value="$PROJECT_DIR$/seedword/seedword/spiders/seedwordSpider.py" />
         <option value="$PROJECT_DIR$/seedword/seedword/pipelines.py" />
@@ -70,9 +87,13 @@
         <option value="$PROJECT_DIR$/topword/topword/spiders/topwordSpider.py" />
         <option value="$PROJECT_DIR$/common/config.py" />
         <option value="$PROJECT_DIR$/qa/qa/pipelines.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/seedproduce.py" />
         <option value="$PROJECT_DIR$/washseed.py" />
         <option value="$PROJECT_DIR$/qa/start.sh" />
+=======
+        <option value="$PROJECT_DIR$/washseed.py" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
       </list>
     </option>
   </component>
@@ -84,8 +105,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -113,7 +134,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -256,6 +276,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,17 +295,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -493,14 +503,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1386" height="788" extended-state="1" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21748401" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22162162" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21644042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -510,6 +527,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22186147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -575,6 +593,42 @@
     <entry file="file://$PROJECT_DIR$/qa/qa/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topword/topword/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding>
+            <element signature="e#192#216#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topword/topword/spiders/topwordSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+          <folding>
+            <element signature="e#24#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qa/qa/spiders/qaSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="71" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qa/qa/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding>
             <element signature="e#193#217#0" expanded="true" />
@@ -586,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -594,12 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
-          <folding>
-            <marker date="1456110998077" expanded="true" signature="3874:3906" placeholder="INSERT INTO `missing_value`... " />
-            <marker date="1456110998077" expanded="true" signature="6621:6652" placeholder="select * fro... sortmonitor_query" />
-            <marker date="1456110998077" expanded="true" signature="6678:6718" placeholder="select * fro... sortmonitor_query" />
-            <marker date="1456110998077" expanded="true" signature="6744:6782" placeholder="select count... sortmonitor_query" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -616,6 +663,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#26#50#0" expanded="true" />
+<<<<<<< HEAD
+=======
+            <marker date="1459089260858" expanded="true" signature="526:620" placeholder="SELECT `titl... question" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           </folding>
         </state>
       </provider>
@@ -624,12 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
-          <folding>
-            <marker date="1456110998077" expanded="true" signature="3874:3906" placeholder="INSERT INTO `missing_value`... " />
-            <marker date="1456110998077" expanded="true" signature="6621:6652" placeholder="select * fro... sortmonitor_query" />
-            <marker date="1456110998077" expanded="true" signature="6678:6718" placeholder="select * fro... sortmonitor_query" />
-            <marker date="1456110998077" expanded="true" signature="6744:6782" placeholder="select count... sortmonitor_query" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -637,12 +682,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#25#49#0" expanded="true" />
             <marker date="1459168280448" expanded="true" signature="488:571" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1250:1333" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1961:2055" placeholder="SELECT `titl... question" />
           </folding>
+=======
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -652,6 +700,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#26#50#0" expanded="true" />
+<<<<<<< HEAD
+=======
+            <marker date="1459089260858" expanded="true" signature="526:620" placeholder="SELECT `titl... question" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           </folding>
         </state>
       </provider>
@@ -660,12 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
-          <folding>
-            <marker date="1456110998077" expanded="true" signature="3874:3906" placeholder="INSERT INTO `missing_value`... " />
-            <marker date="1456110998077" expanded="true" signature="6621:6652" placeholder="select * fro... sortmonitor_query" />
-            <marker date="1456110998077" expanded="true" signature="6678:6718" placeholder="select * fro... sortmonitor_query" />
-            <marker date="1456110998077" expanded="true" signature="6744:6782" placeholder="select count... sortmonitor_query" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -673,12 +719,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#25#49#0" expanded="true" />
             <marker date="1459168280448" expanded="true" signature="488:571" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1250:1333" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1961:2055" placeholder="SELECT `titl... question" />
           </folding>
+=======
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -688,6 +737,10 @@
           <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
             <element signature="e#26#50#0" expanded="true" />
+<<<<<<< HEAD
+=======
+            <marker date="1459089260858" expanded="true" signature="526:620" placeholder="SELECT `titl... question" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           </folding>
         </state>
       </provider>
@@ -717,12 +770,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="35" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="35" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#25#49#0" expanded="true" />
             <marker date="1459168280448" expanded="true" signature="488:571" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1250:1333" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1961:2055" placeholder="SELECT `titl... question" />
           </folding>
+=======
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -739,6 +795,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#26#50#0" expanded="true" />
+<<<<<<< HEAD
+=======
+            <marker date="1459089260858" expanded="true" signature="526:620" placeholder="SELECT `titl... question" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           </folding>
         </state>
       </provider>
@@ -747,12 +807,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#25#49#0" expanded="true" />
             <marker date="1459168280448" expanded="true" signature="488:571" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1250:1333" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1961:2055" placeholder="SELECT `titl... question" />
           </folding>
+=======
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -762,6 +825,10 @@
           <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding>
             <element signature="e#26#50#0" expanded="true" />
+<<<<<<< HEAD
+=======
+            <marker date="1459089260858" expanded="true" signature="526:620" placeholder="SELECT `titl... question" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           </folding>
         </state>
       </provider>
@@ -784,12 +851,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#25#49#0" expanded="true" />
             <marker date="1459168280448" expanded="true" signature="488:571" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1250:1333" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1961:2055" placeholder="SELECT `titl... question" />
           </folding>
+=======
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -799,6 +869,10 @@
           <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding>
             <element signature="e#26#50#0" expanded="true" />
+<<<<<<< HEAD
+=======
+            <marker date="1459089260858" expanded="true" signature="526:620" placeholder="SELECT `titl... question" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           </folding>
         </state>
       </provider>
@@ -821,12 +895,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#25#49#0" expanded="true" />
             <marker date="1459168280448" expanded="true" signature="488:571" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1250:1333" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1961:2055" placeholder="SELECT `titl... question" />
           </folding>
+=======
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -834,12 +911,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+<<<<<<< HEAD
           <folding>
             <element signature="e#25#49#0" expanded="true" />
             <marker date="1459168280448" expanded="true" signature="488:571" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1250:1333" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1961:2055" placeholder="SELECT `titl... question" />
           </folding>
+=======
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -878,6 +958,16 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/common/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
     <entry file="file://$PROJECT_DIR$/topword/topword/items.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -909,13 +999,18 @@
     <entry file="file://$PROJECT_DIR$/topword/topword/spiders/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qa/qa/spiders/qaSpider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="134" selection-end-column="24" />
         </state>
       </provider>
@@ -938,6 +1033,9 @@
             <marker date="1456110998077" expanded="true" signature="6678:6718" placeholder="select * fro... sortmonitor_query" />
             <marker date="1456110998077" expanded="true" signature="6744:6782" placeholder="select count... sortmonitor_query" />
           </folding>
+=======
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -952,6 +1050,7 @@
     <entry file="file://$PROJECT_DIR$/seedproduce.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="87" column="31" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
           <folding>
             <element signature="e#25#49#0" expanded="true" />
@@ -959,6 +1058,9 @@
             <marker date="1459168280448" expanded="true" signature="1250:1333" placeholder="SELECT * FRO... seedword" />
             <marker date="1459168280448" expanded="true" signature="1961:2055" placeholder="SELECT `titl... question" />
           </folding>
+=======
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="48" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
         </state>
       </provider>
     </entry>
@@ -975,7 +1077,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#26#50#0" expanded="true" />
+=======
+            <element signature="e#24#37#0" expanded="false" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           </folding>
         </state>
       </provider>
@@ -985,7 +1091,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#193#217#0" expanded="true" />
+=======
+            <element signature="e#192#216#0" expanded="false" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           </folding>
         </state>
       </provider>
@@ -1000,9 +1110,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/qa/start.sh">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.05698324">
           <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+>>>>>>> 374c79b48eb13e8750fbe8894c13488a17c1e82d
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/washseed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15629984">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#50#0" expanded="true" />
+            <marker date="1459089260858" expanded="true" signature="526:620" placeholder="SELECT `titl... question" />
+          </folding>
         </state>
       </provider>
     </entry>
