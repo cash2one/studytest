@@ -21,5 +21,4 @@ class topwordPipeline(object):
             topword = unquote(topword)
             print topword
             db.insert("topword", word=topword)
-            db.insert("seedword", word=topword)
         return item
