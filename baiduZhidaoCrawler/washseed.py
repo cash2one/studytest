@@ -15,24 +15,27 @@ db_master = DB(**mysql_host["db_master"])
 redis_pool = redis.ConnectionPool(**redis_host["master"])
 r = redis.Redis(connection_pool=redis_pool)
 
-
-tmpList = []
-cnt = 0
-while True:
-    title = r.blpop(wash_seed_queue, 5)
-    if not title:
+cnt=0
+psize = 10000
+chunk = 500
+startId = 0
+tmpSeedList = []
+fploc = int(r.get(tmpfile_seek))
+initSql = "INSERT IGNORE INTO `seedword` (`word`) VALUES ('"
+fp = open(tmpfile,"a")
+fp.seek(fploc)
+for word in fp:
+    w = word.strip()
+    if len(w) <= 0:
         continue
-    title = title[1]
-    if len(title) <= 0:
-        continue
-    segTitle = utils.split_str(title)
     cnt = cnt + 1
-    for seedtitle in segTitle:
-        tmpList.append(seedtitle)
-        tmpList.append(0)
-    if cnt % 100000 == 0:
-        r.zadd(tmp_seed_list,*tmpList)
+    tmpSeedList.append(w)
+    if cnt % chunk == 0:
+        sql = initSql + "'),('".join(tmpSeedList) + "')"
+        db_master.execute(sql)
         tmpList = []
         print cnt
-if tmpList:
-    r.zadd(tmp_seed_list,*tmpList)
+        r.set(tmpfile_seek,fp.tell())
+if tmpSeedList:
+    sql = initSql + "'),('".join(tmpSeedList) + "')"
+    db_master.execute(sql)

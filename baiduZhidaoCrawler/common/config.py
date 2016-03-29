@@ -46,12 +46,8 @@ max_seed_id = "baidu_zhidao_maxseed_id"
 #洗种子
 wash_max_seed_id = "wash_max_seed_id"
 
-#洗种子队列
-wash_seed_queue = "wash_seed_queue"
-
-#临时的种子
-tmp_seed_list = "tmp_seed_list_for_insert"
-tmp_seed_list_id = "tmp_seed_list_for_insert_max_id"
+tmpfile = "seed.log"
+tmpfile_seek = "tmpfile_seek_location"
 
 
 # 各台部署机器上使用的proxy
