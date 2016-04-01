@@ -11,7 +11,7 @@ sys.setdefaultencoding('utf-8')
 
 db = DB(**mysql_host["db_slave"])
 db_master = DB(**mysql_host["db_master"])
-psize = 10000000
+psize = 15000000
 chunk = 10000
 
 redis_pool = redis.ConnectionPool(**redis_host["master"])
@@ -25,7 +25,7 @@ if qlen < 100000:
     sid = r.get(max_seed_id)
     startId = int(sid) if sid else 0
     tmpList = []
-    wordlist = db.fetch_all("SELECT * FROM `seedword` WHERE `id` > " + str(startId) + " ORDER BY `id` ASC LIMIT 100000")
+    wordlist = db.fetch_all("SELECT * FROM `seedword` WHERE `id` > " + str(startId) + " ORDER BY `id` ASC LIMIT 10000")
     for word in wordlist:
         cnt = cnt + 1
         startId = word["id"]
@@ -49,22 +49,19 @@ initSql = "INSERT IGNORE INTO `seedword` (`word`) VALUES ('"
 sid = r.get(wash_max_seed_id)
 startId = int(sid) if sid else 0
 tmpList = []
-while True:
-    wordlist = db.fetch_all("SELECT `title`,`id` FROM `question` WHERE `id` > " + str(startId) + " ORDER BY `id` ASC LIMIT " + str(psize))
-    if len(wordlist) <= 0:
-        break
-    for word in wordlist:
-        cnt = cnt + 1
-        startId = word["id"]
-        seglist = utils.split_str(word["title"])
-        for seg in seglist:
-            tmpList.append( db_master.conn.escape_string(unquote(seg.strip())))
-        if cnt % chunk == 0:
-            sql = initSql + "'),('".join(tmpList) + "')"
-            db_master.execute(sql)
-            tmpList = []
-            r.set(wash_max_seed_id, startId)
-            print cnt
+wordlist = db.fetch_all("SELECT `title`,`id` FROM `question` WHERE `id` > " + str(startId) + " ORDER BY `id` ASC LIMIT " + str(psize))
+for word in wordlist:
+    cnt = cnt + 1
+    startId = word["id"]
+    seglist = utils.split_str(word["title"])
+    for seg in seglist:
+        tmpList.append( db_master.conn.escape_string(unquote(seg.strip())))
+    if cnt % chunk == 0:
+        sql = initSql + "'),('".join(tmpList) + "')"
+        db_master.execute(sql)
+        tmpList = []
+        r.set(wash_max_seed_id, startId)
+        print cnt
 if tmpList:
     r.set(wash_max_seed_id, startId)
     sql = initSql + "'),('".join(tmpList) + "')"

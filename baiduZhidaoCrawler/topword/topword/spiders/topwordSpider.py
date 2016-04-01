@@ -12,16 +12,23 @@ sys.setdefaultencoding('utf-8')
 
 class topwordSpider(CrawlSpider):
     name = "topword"
-    allowed_domains = ["top.baidu.com", "top.so.com", "top.sogou.com","www.zwbk.org"]
+    allowed_domains = [
+        "top.baidu.com",
+        "top.so.com",
+        "top.sogou.com",
+        "www.zwbk.org",
+        "www.baike.com"
+    ]
 
     start_urls = [
-        #"http://top.baidu.com/boards",#百度热搜：全部榜单
-        #"http://top.sogou.com/home.html",#搜狗热搜：首页
-        #"http://top.so.com/",  # 360搜索热搜：首页
-        #"http://top.so.com/index.php?m=Hotnews&a=detail",  # 360搜索热搜：今日看点
-        #"http://top.so.com/index.php?m=Hotnews&a=detail&type=week_hot",  # 360搜索热搜：七日看点
+        "http://top.baidu.com/boards",#百度热搜：全部榜单
+        "http://top.sogou.com/home.html",#搜狗热搜：首页
+        "http://top.so.com/",  # 360搜索热搜：首页
+        "http://top.so.com/index.php?m=Hotnews&a=detail",  # 360搜索热搜：今日看点
+        "http://top.so.com/index.php?m=Hotnews&a=detail&type=week_hot",  # 360搜索热搜：七日看点
         #"http://www.zwbk.org/MyTypeLayerMain.aspx?tid=001001",#中文百科在线
-        "http://www.zwbk.org/HtoLemma.aspx",#热门词条
+        #"http://www.zwbk.org/HtoLemma.aspx",#热门词条
+        #"http://www.baike.com/cmsMorePage.do?page_now=1&templateId=100000030042",#互动百科：优质分类
     ]
 
     baidu_buzz_pattern = re.compile(r'^http:\/\/top\.baidu\.com\/buzz\?b=\d+')
@@ -30,6 +37,7 @@ class topwordSpider(CrawlSpider):
     so_category_pattern2 = re.compile(r'^http:\/\/top\.so\.com\/index\.php\?m=.*?&c=.*')
     zwbk_tid_pattern = re.compile(r'^http:\/\/www\.zwbk\.org\/MyTypeLayer.*?\.aspx\?tid=.*')
     ciku5_pattern = re.compile(r'^http:\/\/www\.ciku5\.com\/words\?citype=\d+(&p=\d+)?')
+    baike_category_pattern = re.compile(r'^http:\/\/www\.baike\.com\/cmsMorePage\.do\?page_now=\d.*?&templateId=.*')
 
     def parse(self, response):
         url = response.url
@@ -86,6 +94,16 @@ class topwordSpider(CrawlSpider):
                 item["topword"] = word
                 yield item
             words = response.xpath("//div[@class='rdct_con']/a[@target='_blank']/text()").extract()
+            for word in words:
+                item = topwordItem()
+                item["topword"] = word
+                yield item
+        elif url.find("www.baike.com") > 0:
+            for href in response.css("a::attr('href')"):
+                url = response.urljoin(href.extract())
+                if self.baike_category_pattern.match(url):
+                    yield scrapy.Request(url, callback=self.parse)
+            words = response.xpath("//ul[@class='index_page']/li/a/text()").extract()
             for word in words:
                 item = topwordItem()
                 item["topword"] = word

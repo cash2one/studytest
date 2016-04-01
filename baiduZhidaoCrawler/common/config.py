@@ -46,6 +46,8 @@ max_seed_id = "baidu_zhidao_maxseed_id"
 #洗种子
 wash_max_seed_id = "wash_max_seed_id"
 
+move_seed_id = "move_seed_id"
+
 
 # 各台部署机器上使用的proxy
 http_proxy_host = {
