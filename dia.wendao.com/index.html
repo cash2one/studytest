@@ -10,11 +10,8 @@
 <div id="paper" class="paper"></div>
 <script type="text/javascript">
     var erd = joint.shapes.erd;
-
     var graph = new joint.dia.Graph();
-
-    var paper = new joint.dia.Paper(
-            {
+    var paper = new joint.dia.Paper({
                 el: document.getElementById('paper'),
                 width: 695,
                 height: 600,
@@ -26,7 +23,6 @@
     );
 
     // Custom highlighter - display an outline around each element that fits its shape.
-
     var highlighter = V(
             'path', {
                 'stroke': '#e9fc03',
@@ -37,38 +33,26 @@
     );
 
     // Define a specific highligthing path for every shape.
-
     erd.Attribute.prototype.getHighlighterPath = function(w, h){
-
         return ['M', 0, h / 2, 'A', w / 2, h / 2, '0 1,0', w, h / 2, 'A', w / 2, h / 2, '0 1,0', 0, h / 2].join(' ');
     };
-
     erd.Entity.prototype.getHighlighterPath = function(w, h){
-
         return ['M', w, 0, w, h, 0, h, 0, 0, 'z'].join(' ');
     };
-
     erd.Relationship.prototype.getHighlighterPath = function(w, h){
-
         return ['M', w / 2, 0, w, w / 2, w / 2, w, 0, w / 2, 'z'].join(' ');
     };
-
     erd.ISA.prototype.getHighlighterPath = function(w, h){
-
         return ['M', -8, 1, w + 8, 1, w / 2, h + 2, 'z'].join(' ');
     };
 
     // Unbind orignal highligting handlers.
     paper.off('cell:highlight cell:unhighlight');
-
     // Bind custom ones.
     paper.on(
             'cell:highlight', function(cellView){
-
                 var padding = 5;
-
-                var bbox = g.rect(cellView.getBBox({useModelGeometry: true})).moveAndExpand(
-                        {
+                var bbox = g.rect(cellView.getBBox({useModelGeometry: true})).moveAndExpand({
                             x: -padding,
                             y: -padding,
                             width: 2 * padding,
@@ -78,23 +62,17 @@
 
                 highlighter.translate(bbox.x, bbox.y, {absolute: true});
                 highlighter.attr('d', cellView.model.getHighlighterPath(bbox.width, bbox.height));
-
                 V(paper.viewport).append(highlighter);
             }
     );
 
-    paper.on(
-            'cell:unhighlight', function(){
-
+    paper.on('cell:unhighlight', function(){
                 highlighter.remove();
             }
     );
 
     // Create shapes
-
-    var employee = new erd.Entity(
-            {
-
+    var employee = new erd.Entity({
                 position: {x: 100, y: 200},
                 attrs: {
                     text: {
@@ -112,9 +90,7 @@
             }
     );
 
-    var wage = new erd.WeakEntity(
-            {
-
+    var wage = new erd.WeakEntity({
                 position: {x: 530, y: 200},
                 attrs: {
                     text: {
@@ -138,9 +114,7 @@
             }
     );
 
-    var paid = new erd.IdentifyingRelationship(
-            {
-
+    var paid = new erd.IdentifyingRelationship({
                 position: {x: 350, y: 190},
                 attrs: {
                     text: {
@@ -162,9 +136,7 @@
             }
     );
 
-    var isa = new erd.ISA(
-            {
-
+    var isa = new erd.ISA({
                 position: {x: 125, y: 300},
                 attrs: {
                     text: {
@@ -182,9 +154,7 @@
             }
     );
 
-    var number = new erd.Key(
-            {
-
+    var number = new erd.Key({
                 position: {x: 1, y: 90},
                 attrs: {
                     text: {
@@ -204,9 +174,7 @@
             }
     );
 
-    var employeeName = new erd.Normal(
-            {
-
+    var employeeName = new erd.Normal({
                 position: {x: 75, y: 30},
                 attrs: {
                     text: {
@@ -224,9 +192,7 @@
             }
     );
 
-    var skills = new erd.Multivalued(
-            {
-
+    var skills = new erd.Multivalued({
                 position: {x: 150, y: 90},
                 attrs: {
                     text: {
@@ -251,9 +217,7 @@
             }
     );
 
-    var amount = new erd.Derived(
-            {
-
+    var amount = new erd.Derived({
                 position: {x: 440, y: 80},
                 attrs: {
                     text: {
@@ -277,9 +241,7 @@
             }
     );
 
-    var uses = new erd.Relationship(
-            {
-
+    var uses = new erd.Relationship({
                 position: {x: 300, y: 390},
                 attrs: {
                     text: {
@@ -298,27 +260,18 @@
     );
 
     // Create new shapes by cloning
-
     var salesman = employee.clone().translate(0, 200).attr('text/text', 'Salesman');
-
     var date = employeeName.clone().position(590, 80).attr('text/text', 'Date');
-
     var car = employee.clone().position(430, 400).attr('text/text', 'Company car');
-
     var plate = number.clone().position(405, 500).attr('text/text', 'Plate');
 
-
     // Helpers
-
     var createLink = function(elm1, elm2){
-
-        var myLink = new erd.Line(
-                {
+        var myLink = new erd.Line({
                     source: {id: elm1.id},
                     target: {id: elm2.id}
                 }
         );
-
         return myLink.addTo(graph);
     };
 
@@ -335,9 +288,7 @@
     };
 
     // Add shapes to the graph
-
     graph.addCells([employee, salesman, wage, paid, isa, number, employeeName, skills, amount, date, plate, car, uses]);
-
     createLink(employee, paid).set(createLabel('1'));
     createLink(employee, number);
     createLink(employee, employeeName);
